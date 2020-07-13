@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { CircularProgress } from '@material-ui/core';
 
 function ViewImage(props){
 
@@ -8,6 +9,7 @@ function ViewImage(props){
     const [dimensions, setDimensions] = useState(props.location.image?props.location.image.width+" x "+props.location.image.height:null);
     const [grayScale, setGrayScale] = useState(false);
     const [blur, setBlur] = useState('0');
+    const [loading, setLoading] = useState(false);
 
     useEffect(() =>  {
         if(props.location.image == null || imagem == null){
@@ -24,29 +26,36 @@ function ViewImage(props){
     },[]);
 
     function toggleGray(){
+        setLoading(true);
         setGrayScale(!grayScale);
         setImagem([imagem[0], grayScale?'':'?grayscale' , blur>0?`${grayScale?'?':'&'}blur=${blur}`:'']);
     }
     
     function Blur(value){
+        setLoading(true);
         setBlur(value);
         setImagem([imagem[0], imagem[1], value>0?`${grayScale?'&':'?'}blur=${value}`:'']);
     }
 
     return(
         <div className="viewImage">
-            <img src={imagem.join('')} alt={imageId}/>
+            <img src={imagem.join('')} alt={imageId} onLoad={()=> setLoading(false)} onError={()=> setLoading(false)}/>
             <div className="edicao">
+                
                 <div className="info">{imageId}</div>
                 <div className="info">{author}</div>
                 <div className="info">{dimensions}</div>
-                <div className="filters">FILTERS</div>
+                <div className="filters">FILTERS
+                    <div className="progressCircle" hidden={!loading}>
+                        <CircularProgress className="progressCircleChild" color="inherit" />
+                    </div>
+                </div>
                 <div className="grayscale">
-                    <input type="checkbox" checked={grayScale} onChange={()=>toggleGray()}/>
+                    <input type="checkbox" disabled={loading} checked={grayScale} onChange={()=>toggleGray()}/>
                     <label>GrayScale</label>
                 </div>
                 <div className="info">Blur</div>
-                <input className="blur" type="range" min="0" max="10" value={blur} onChange={(e)=> Blur(e.target.value)}/>
+                <input className="blur" disabled={loading} type="range" min="0" max="10" value={blur} onChange={(e)=> Blur(e.target.value)}/>
                 <div className="info">{blur}</div>
             </div>
         </div>
