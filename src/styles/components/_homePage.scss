@@ -1,6 +1,8 @@
 .homePage{
-    padding:50px;
+    padding:47px;
+    box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
 
     .progressCircle{
@@ -15,6 +17,7 @@
         width: 100%;
         height: auto;
         align-self: center;
+        object-fit: cover;
         flex-basis: 1;
         flex-shrink: 1;
     }
@@ -24,7 +27,8 @@
         align-items: center;
         border-radius: 5px;
         overflow: hidden;
-        object-fit: cover;
+        height: 100%;
+        width: 100%;
         border: 1px solid $image-border-color;
         box-sizing: border-box;
         @include shadow-hover;
@@ -38,8 +42,10 @@
 
         @media (min-width: 700px) {
             display:grid;
+            grid-template-columns: repeat(58, 1fr);
+            grid-template-rows: repeat(38, 1fr);
             grid-gap: 25px;
-            max-width: 1160px;
+            height: 935px;
 
             .item1{
                 grid-column: 1/15;
@@ -108,6 +114,8 @@
             display:grid;
             grid-gap: 25px;
             grid-template-columns: repeat(3, 1fr);
+            // width: 100%;
+            // max-width: 1160px;
         }
     }
 }
