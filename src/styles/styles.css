@@ -99,12 +99,32 @@ html, body {
   z-index: 999;
 }
 
-.homePage .grid > * img {
+.homePage > * img {
   width: 100%;
   height: auto;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.homePage > * .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid #9e9e9e;
+  cursor: pointer;
+}
+
+.homePage > * .item:hover {
+  -webkit-box-shadow: 0 2.6px 4.3px rgba(0, 0, 0, 0.073), 0 8.7px 14.5px rgba(0, 0, 0, 0.107), 0 39px 65px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 2.6px 4.3px rgba(0, 0, 0, 0.073), 0 8.7px 14.5px rgba(0, 0, 0, 0.107), 0 39px 65px rgba(0, 0, 0, 0.18);
 }
 
 @media (max-width: 699px) {
@@ -123,17 +143,6 @@ html, body {
     display: grid;
     grid-gap: 25px;
     max-width: 1160px;
-  }
-  .homePage .grid .item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    border-radius: 5px;
-    overflow: hidden;
-    border: 1px solid #9e9e9e;
   }
   .homePage .grid .item1 {
     -ms-grid-column: 1;
@@ -245,28 +254,6 @@ html, body {
   padding-top: 25px;
 }
 
-.homePage .others > * img {
-  width: 100%;
-  height: auto;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.homePage .others .otherItem {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 5px;
-  overflow: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border: 1px solid #9e9e9e;
-}
-
 @media (max-width: 699px) {
   .homePage .others {
     display: -webkit-box;
@@ -306,12 +293,21 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
-  height: 100%;
+  max-width: 548px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 5px;
-  max-width: 550px;
-  background-color: #9e9e9e;
   overflow: hidden;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid #9e9e9e;
+  cursor: pointer;
+}
+
+.viewImage .image:hover {
+  -webkit-box-shadow: 0 2.6px 4.3px rgba(0, 0, 0, 0.073), 0 8.7px 14.5px rgba(0, 0, 0, 0.107), 0 39px 65px rgba(0, 0, 0, 0.18);
+          box-shadow: 0 2.6px 4.3px rgba(0, 0, 0, 0.073), 0 8.7px 14.5px rgba(0, 0, 0, 0.107), 0 39px 65px rgba(0, 0, 0, 0.18);
 }
 
 .viewImage .image img {
@@ -319,15 +315,8 @@ html, body {
       flex-basis: 1;
   -ms-flex-negative: 1;
       flex-shrink: 1;
-  margin: 2px;
-  max-width: 548px;
   width: 100%;
   height: auto;
-}
-
-.viewImage .image img:hover {
-  -webkit-box-shadow: 0 2.6px 4.3px rgba(0, 0, 0, 0.073), 0 8.7px 14.5px rgba(0, 0, 0, 0.107), 0 39px 65px rgba(0, 0, 0, 0.18);
-          box-shadow: 0 2.6px 4.3px rgba(0, 0, 0, 0.073), 0 8.7px 14.5px rgba(0, 0, 0, 0.107), 0 39px 65px rgba(0, 0, 0, 0.18);
 }
 
 .viewImage .edicao {

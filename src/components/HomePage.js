@@ -56,7 +56,7 @@ function HomePage(){
                         (img, i) => {
                             if(i> 12){
                                 return(
-                                    <div className="otherItem" key={i}>
+                                    <div className="item" key={i}>
                                         {<Link to={{
                                             pathname: '/ViewImage',
                                             image:img}}>
