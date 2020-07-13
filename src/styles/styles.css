@@ -286,53 +286,29 @@ html, body {
   }
 }
 
-.viewImageBlock {
-  margin: 80px 100px 70px 100px;
-  height: auto;
-}
-
 .viewImage {
   display: -ms-grid;
   display: grid;
-  height: auto;
-}
-
-.viewImage > * img {
-  border-radius: 5px;
-}
-
-.viewImage .image {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 548px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 5px;
-  overflow: hidden;
-  border: 1px solid #9e9e9e;
+  padding: 80px 100px 70px 100px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.viewImage img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #9e9e9e;
   cursor: pointer;
 }
 
-.viewImage .image:hover {
+.viewImage img:hover {
   -webkit-box-shadow: 0 2.6px 4.3px rgba(0, 0, 0, 0.073), 0 8.7px 14.5px rgba(0, 0, 0, 0.107), 0 39px 65px rgba(0, 0, 0, 0.18);
           box-shadow: 0 2.6px 4.3px rgba(0, 0, 0, 0.073), 0 8.7px 14.5px rgba(0, 0, 0, 0.107), 0 39px 65px rgba(0, 0, 0, 0.18);
 }
 
-.viewImage .image img {
-  -ms-flex-preferred-size: 1;
-      flex-basis: 1;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
-  width: 100%;
-  height: auto;
-}
-
 .viewImage .edicao {
-  height: 260px;
+  height: 100%;
 }
 
 .viewImage .edicao .info:first-child {

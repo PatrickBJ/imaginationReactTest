@@ -34,24 +34,20 @@ function ViewImage(props){
     }
 
     return(
-        <div className="viewImageBlock">
-            <div className="viewImage">
-                <div className="image">
-                    <img alt="Edição de imagem" src={imagem.join('')} draggable="false"/>
+        <div className="viewImage">
+            <img src={imagem.join('')} alt={imageId}/>
+            <div className="edicao">
+                <div className="info">{imageId}</div>
+                <div className="info">{author}</div>
+                <div className="info">{dimensions}</div>
+                <div className="filters">FILTERS</div>
+                <div className="grayscale">
+                    <input type="checkbox" checked={grayScale} onChange={()=>toggleGray()}/>
+                    <label>GrayScale</label>
                 </div>
-                <div className="edicao">
-                    <div className="info">{imageId}</div>
-                    <div className="info">{author}</div>
-                    <div className="info">{dimensions}</div>
-                    <div className="filters">FILTERS</div>
-                    <div className="grayscale">
-                        <input type="checkbox" checked={grayScale} onChange={()=>toggleGray()}/>
-                        <label>GrayScale</label>
-                    </div>
-                    <div className="info">Blur</div>
-                    <input className="blur" type="range" min="0" max="10" value={blur} onChange={(e)=> Blur(e.target.value)}/>
-                    <div className="info">{blur}</div>
-                </div>
+                <div className="info">Blur</div>
+                <input className="blur" type="range" min="0" max="10" value={blur} onChange={(e)=> Blur(e.target.value)}/>
+                <div className="info">{blur}</div>
             </div>
         </div>
     );

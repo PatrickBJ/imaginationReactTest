@@ -1,36 +1,18 @@
-.viewImageBlock{
-    margin: 80px 100px 70px 100px;
-    height: auto;
-}
-
 .viewImage{
     display: grid;
-    height: auto;
+    padding: 80px 100px 70px 100px;
+    box-sizing: border-box;
 
-    >* img{
+    img{
+        width: 100%;
+        height:auto;
         border-radius: 5px;
-    }
-
-    .image{
-        display: flex;
-        max-width: 548px;
-        align-items: center;
-        border-radius: 5px;
-        overflow: hidden;
         border: 1px solid $image-border-color;
-        box-sizing: border-box;
         @include shadow-hover;
-
-        img{
-            flex-basis: 1;
-            flex-shrink: 1;
-            width: 100%;
-            height: auto;
-        }
     }
 
     .edicao{
-        height: 260px;
+        height: 100%;
 
         .info{
             &:first-child{
@@ -78,6 +60,5 @@
     @media (min-width: 700px) {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 70px;
-        // grid-row-gap: 25px;
     }
 }

@@ -1,4 +1,4 @@
-import client from './instance';
+// import client from './instance';
 
 async function buscaImagens() {
     let listaImagem = [];

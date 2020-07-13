@@ -34,17 +34,13 @@ function HomePage(){
             <div className="grid">
                 {
                     listaImagem.map(
-                        (img, i) => {
-                            if(i<= 12){
-                                return(
-                                    <div className={seletorColunaEOrdem(i+1)} style={{backgroundImage: `url(${img.download_url})`}} key={i}>
-                                        <Link to={{
-                                            pathname: '/ViewImage',
-                                            image:img}} style={{width: "100%", height:"100%"}}>
-                                        </Link>
-                                    </div>
-                                )}
-                        }
+                        (img, i) => (i<= 12)?
+                            <div className={seletorColunaEOrdem(i+1)} style={{backgroundImage: `url(${img.download_url})`}} key={i}>
+                                <Link to={{
+                                    pathname: '/ViewImage',
+                                    image:img}} style={{width: "100%", height:"100%"}}>
+                                </Link>
+                            </div>:null
                     )
                 }
             </div>
@@ -52,17 +48,12 @@ function HomePage(){
             <div className="others">
                 {
                     listaImagem.map(
-                        (img, i) => {
-                            if(i> 12){
-                                return(
-                                    <Link to={{
-                                        pathname: '/ViewImage',
-                                        image:img}} key={i}>
-                                        <div className="item" style={{backgroundImage: `url(${img.download_url})`}}/>
-                                    </Link>
-                                )
-                            }
-                        }
+                        (img, i) => (i> 12)?
+                                <Link to={{
+                                    pathname: '/ViewImage',
+                                    image:img}} key={i}>
+                                    <div className="item" style={{backgroundImage: `url(${img.download_url})`}}/>
+                                </Link>:null
                     )
                 }
             </div>
