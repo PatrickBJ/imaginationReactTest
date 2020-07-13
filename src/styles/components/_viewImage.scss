@@ -1,0 +1,88 @@
+.viewImageBlock{
+    margin: 80px 100px 70px 100px;
+    height: auto;
+}
+
+.viewImage{
+    display: grid;
+    height: auto;
+
+    >* img{
+        border-radius: 5px;
+    }
+
+    //normal, mouseover, pressionado/clicado
+    .image{
+        display: flex;
+        height: 100%;
+        height: 100%;
+        border-radius: 5px;
+        max-width: 550px;
+        background-color: $image-border-color;
+        overflow: hidden;
+        
+        img{
+            flex-basis: 1;
+            flex-shrink: 1;
+            
+            margin: 2px;
+            max-width: 548px;
+            width: 100%;
+            height: auto;
+
+            @include shadow-hover;
+        }
+    }
+
+    .edicao{
+        height: 260px;
+
+        .info{
+            &:first-child{
+                padding-top: 25px;
+            }
+            
+            &:not(:first-child){
+                padding-top: 5px;
+            }
+        }
+
+        .filters{
+            margin-top: 50px;
+            font-family: Poppins-SemiBold;
+        }
+
+        .grayscale{
+            padding-top: 5px;
+            padding-bottom: 10px;
+            input{
+                transform: scale(1.4);
+                color: black;
+                &:checked{
+                    background-color: black;
+                }
+            }
+
+            label{
+                padding-left: 7px;
+            }
+        }
+
+        input{
+            &.blur{
+                width: 100%;
+                color: black;
+            }
+        }
+    }
+
+    @media (max-width: 699px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media (min-width: 700px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 70px;
+        // grid-row-gap: 25px;
+    }
+}

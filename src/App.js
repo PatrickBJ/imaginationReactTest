@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import { BrowserRouter, Switch, useHistory, Route, Link } from 'react-router-dom'
+import { Switch, Route, Link } from 'react-router-dom'
+import './styles/styles.css';
+import logo from './assets/logo_imagination.png';
+import HomePage from './components/HomePage'
+import ViewImage from './components/ViewImage'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="bar">
+        <Link className="barImage" to={{pathname: '/'}}>
+          <img alt="logo imagination" className="logo" src={logo} draggable="false"/>
+        </Link>
+      </div>
+      <div className="content">
+        <Switch>
+          <Route path="/" exact={true} component={HomePage} />
+          <Route path="/ViewImage" component={ViewImage} />
+        </Switch>
+      </div>
     </div>
   );
 }

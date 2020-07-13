@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Poppins-Italic;
+    src: url("../assets/Poppins-Italic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Poppins-SemiBold;
+    src: url("../assets/Poppins-SemiBold.otf") format("opentype");
+}
+
+@mixin shadow-hover {
+    &:hover{
+        box-shadow:
+            0 2.6px 4.3px rgba(0, 0, 0, 0.073),
+            0 8.7px 14.5px rgba(0, 0, 0, 0.107),
+            0 39px 65px rgba(0, 0, 0, 0.18);
+    }
+  }
+
+$image-border-color: rgb(158, 158, 158);
