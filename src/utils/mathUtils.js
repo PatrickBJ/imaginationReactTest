@@ -11,44 +11,23 @@ function encontraIndexacao(i){
 function buscaRatioIndex(index){
 	switch (index) {
 		case 1:
-		case 8:
 		case 10:
-		case 11:
-		case 12:
-			return 'h';
+			return 1.5;
 		case 2:
+			return 0.667;
+		case 8:
+			return 1.111;
 		case 9:
+			return 0.727;
+		case 11:
+			return 1.923;
+		case 12:
+			return 0.947;
 		case 13:
-			return 'v'
+			return 1.154;
 		default:
-			return '*'
+			return 1;
 	}
 }
 
-function ajustaRatio(i, img){
-	// let defaultRatio = {width: "100%", height: "auto"};
-	let defaultRatio = {};
-	
-	//verificar tipo de ratio da imagem h (horizontal) | v (vertical) | * (quadrada)
-	const ratioIndex = buscaRatioIndex(i);
-	
-	// imagem tipo horizontal
-	// if(img.width > img.height)
-	// {
-	// 	if(ratioIndex === 'v' || ratioIndex === '*')
-	// 		defaultRatio = {width: "auto", height: "100%"};
-	// }
-	// //imagem tipo vertical
-	// else if(img.width < img.height){
-	// 	if(ratioIndex === 'h')
-	// 		defaultRatio = {width: "auto", height: "100%"};
-	// }
-	// // imagem quadrada
-	// else{
-	// 	if(ratioIndex === 'v' || ratioIndex === 'h')
-	// 		defaultRatio = {width: "auto", height: "100%"};
-	// }
-	return defaultRatio;
-}
-
-export {randomInt, encontraIndexacao, ajustaRatio, buscaRatioIndex};
+export {randomInt, encontraIndexacao, buscaRatioIndex};
