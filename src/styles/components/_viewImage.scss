@@ -17,14 +17,13 @@
         align-items: center;
         border-radius: 5px;
         overflow: hidden;
-        object-fit: cover;
         border: 1px solid $image-border-color;
+        box-sizing: border-box;
         @include shadow-hover;
 
         img{
             flex-basis: 1;
             flex-shrink: 1;
-            
             width: 100%;
             height: auto;
         }
