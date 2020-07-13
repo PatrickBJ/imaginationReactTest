@@ -4,9 +4,9 @@
         &:hover{
             animation: hover-animation 2s infinite;
             @keyframes hover-animation {
-                100%{transform: translateY(0px);}
-                50%{transform: translateY(10px);}
-                100%{transform: translateY(0px);}
+                100%{transform: scale(1,1);}
+                50%{transform: scale(1.08,1.08) rotate(5deg);}
+                100%{transform: scale(1,1);}
             }
         }
     }
