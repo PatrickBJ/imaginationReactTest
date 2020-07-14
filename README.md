@@ -1,4 +1,4 @@
-Teste de front end imagination.
+Teste de front-end em react imagination.
 
 O app Imagination é uma galeria de imagens. As imagens devem ser retiradas da API https://picsum.photos/. A quantidade mínima de imagens que deve aparecer na home é 20. Ao clicar em em uma imagem, o usuário é levado para uma página onde é exibido a imagem selecionada, algumas informações e a possibilidade de adicionar alguns filtros (permitidos pela API).
 
