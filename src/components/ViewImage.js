@@ -51,8 +51,11 @@ function ViewImage(props){
                     </div>
                 </div>
                 <div className="grayscale">
-                    <input type="checkbox" disabled={loading} checked={grayScale} onChange={()=>toggleGray()}/>
-                    <label>GrayScale</label>
+                    <label class="checkbox-container" onClick={()=>toggleGray()}>
+                        <input type="checkbox" disabled={loading} checked={grayScale}/>
+                        <span class="checkmark"></span>
+                        <label draggable="false">GrayScale</label>
+                    </label>
                 </div>
                 <div className="info">Blur</div>
                 <input className="blur" disabled={loading} type="range" min="0" max="10" value={blur} onChange={(e)=> Blur(e.target.value)}/>
